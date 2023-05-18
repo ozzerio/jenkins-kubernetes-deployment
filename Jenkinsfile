@@ -1,13 +1,16 @@
 pipeline {
   environment {
-    dockerimagename = "bravinwasike/react-app"
+    dockerimagename = "omaroz/react-app"
     dockerImage = ""
   }
   agent any
   stages {
     stage('Checkout Source') {
       steps {
-        git 'https://github.com/Bravinsimiyu/jenkins-kubernetes-deployment.git'
+
+git branch: 'main', credentialsId: 'github-credentials', url: 'https://github.com/ozzerio/jenkins-kubernetes-deployment.git'
+
+        git 'https://github.com/ozzerio/jenkins-kubernetes-deployment.git'
       }
     }
     stage('Build image') {
