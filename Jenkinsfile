@@ -9,8 +9,6 @@ pipeline {
       steps {
 
 git branch: 'main', credentialsId: 'github-credentials', url: 'https://github.com/ozzerio/jenkins-kubernetes-deployment.git'
-
-        git 'https://github.com/ozzerio/jenkins-kubernetes-deployment.git'
       }
     }
     stage('Build image') {
